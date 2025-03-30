@@ -1,0 +1,67 @@
+<mat-card>
+    <mat-card-title>Lista de Asegurados</mat-card-title>
+    <mat-card-content>
+  
+      <!-- Campo de búsqueda -->
+      <div style="display: flex; justify-content: center; margin-bottom: 15px;">
+        <mat-form-field appearance="outline" style="width: 50%;">
+          <mat-label>Buscar por ID</mat-label>
+          <input matInput (keyup)="applyFilter($event)" placeholder="Ingrese ID">
+        </mat-form-field>
+      </div>
+  
+  
+      <table mat-table [dataSource]="filteredInsureds" class="mat-elevation-z8">
+  
+        <!-- ID Number -->
+        <ng-container matColumnDef="idNumber">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let element"> {{ element.idNumber }} </td>
+        </ng-container>
+  
+        <!-- Nombre -->
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <td mat-cell *matCellDef="let element"> {{ element.firstName }} </td>
+        </ng-container>
+  
+        <!-- Primer Apellido -->
+        <ng-container matColumnDef="firstLastName">
+          <th mat-header-cell *matHeaderCellDef> Primer Apellido </th>
+          <td mat-cell *matCellDef="let element"> {{ element.firstLastName }} </td>
+        </ng-container>
+  
+        <!-- Email -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{ element.email }} </td>
+        </ng-container>
+  
+        <!-- Teléfono -->
+        <ng-container matColumnDef="contactPhone">
+          <th mat-header-cell *matHeaderCellDef> Teléfono </th>
+          <td mat-cell *matCellDef="let element"> {{ element.contactPhone }} </td>
+        </ng-container>
+  
+        <!-- Valor Estimado -->
+        <ng-container matColumnDef="estimatedValue">
+          <th mat-header-cell *matHeaderCellDef> Valor Estimado </th>
+          <td mat-cell *matCellDef="let element"> {{ element.estimatedValue | currency }} </td>
+        </ng-container>
+  
+        <!-- Acciones -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-button color="accent" (click)="editInsured(element)">Editar</button>
+            <button mat-button color="warn" (click)="deleteInsured(element.idNumber)">Eliminar</button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+      </table>
+  
+    </mat-card-content>
+  </mat-card>

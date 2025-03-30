@@ -1,0 +1,105 @@
+<mat-card>
+  <form [formGroup]="insuredForm" (ngSubmit)="submitForm()">
+    <mat-card-title>Registro de Asegurado</mat-card-title>
+
+    <div class="form-container">
+      <!-- Número de Identificación -->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Número de Identificación</mat-label>
+        <input matInput id="idNumber" formControlName="idNumber" type="text" />
+        <mat-error *ngIf="formControls['idNumber'].invalid && formControls['idNumber'].touched">
+          ⚠️ Debe tener entre 6 y 15 dígitos.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Primer Nombre -->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Primer Nombre</mat-label>
+        <input matInput id="firstName" formControlName="firstName" type="text" />
+        <mat-error *ngIf="formControls['firstName'].invalid && formControls['firstName'].touched">
+          ⚠️ Solo se permiten letras y mínimo 2 caracteres.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Segundo Nombre -->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Segundo Nombre</mat-label>
+        <input matInput id="middleName" formControlName="middleName" type="text" />
+      </mat-form-field>
+
+      <!-- Primer Apellido -->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Primer Apellido</mat-label>
+        <input matInput id="firstLastName" formControlName="firstLastName" type="text" />
+        <mat-error *ngIf="formControls['firstLastName'].invalid && formControls['firstLastName'].touched">
+          ⚠️ Solo se permiten letras.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Segundo Apellido -->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Segundo Apellido</mat-label>
+        <input matInput id="middleLastName" formControlName="middleLastName" type="text" />
+        <mat-error *ngIf="formControls['middleLastName'].invalid && formControls['middleLastName'].touched">
+          ⚠️ Solo se permiten letras.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Correo Electrónico -->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Correo Electrónico</mat-label>
+        <input matInput id="email" formControlName="email" type="email" />
+        <mat-error *ngIf="formControls['email'].invalid && formControls['email'].touched">
+          ⚠️ Ingrese un correo válido.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Teléfono de Contacto -->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Teléfono de Contacto</mat-label>
+        <input matInput id="contactPhone" formControlName="contactPhone" type="text" />
+        <mat-error *ngIf="formControls['contactPhone'].invalid && formControls['contactPhone'].touched">
+          ⚠️ Solo números, entre 7 y 15 dígitos.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Fecha de Nacimiento -->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input matInput id="dateOfBirth" formControlName="dateOfBirth" type="date" />
+        <mat-error *ngIf="formControls['dateOfBirth'].invalid && formControls['dateOfBirth'].touched">
+          ⚠️ Ingrese una fecha válida.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Valor Estimado -->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Valor Estimado</mat-label>
+        <input matInput id="estimatedValue" formControlName="estimatedValue" type="number" />
+        <mat-error *ngIf="formControls['estimatedValue'].invalid && formControls['estimatedValue'].touched">
+          ⚠️ El valor debe estar entre 1,000 y 100,000,000.
+        </mat-error>
+      </mat-form-field>
+
+      <!-- Observaciones -->
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>Observaciones</mat-label>
+        <textarea matInput id="observations" formControlName="observations"></textarea>
+      </mat-form-field>
+
+      <!-- Botón de Envío -->
+<div class="button-container">
+  <button mat-raised-button color="primary" type="submit" [disabled]="insuredForm.invalid || loading">
+    {{ selectedInsured ? 'Actualizar Asegurado' : 'Registrar Asegurado' }}
+  </button>
+  <button *ngIf="selectedInsured" mat-button color="warn" (click)="clearForm()">
+    Cancelar Edición
+  </button>
+</div>
+    </div>
+  </form>
+
+  <!-- Mensajes de éxito o error -->
+  <p *ngIf="successMessage" class="success-message">{{ successMessage }}</p>
+  <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+</mat-card>

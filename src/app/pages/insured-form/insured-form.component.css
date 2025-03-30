@@ -1,0 +1,75 @@
+.form-card {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .success-message {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+  
+
+  /* Contenedor principal del formulario */
+.form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Asegura que las filas se distribuyan uniformemente */
+.form-field {
+  width: 100%;
+}
+
+/* Tarjeta del formulario */
+mat-card {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+/* Botón centrado */
+.button-container {
+  grid-column: span 2; /* Ocupa ambas columnas */
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Mejoras en los campos de entrada */
+mat-form-field {
+  width: 100%;
+}
+
+/* Efecto al enfocar los inputs */
+input:focus, textarea:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 5px rgba(25, 118, 210, 0.5);
+}
+
+/* Mensajes de éxito y error */
+.success-message {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
