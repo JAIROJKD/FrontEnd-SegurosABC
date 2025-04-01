@@ -73,3 +73,25 @@ input:focus, textarea:focus {
   text-align: center;
 }
 
+.form-container {
+  margin-top: 10px; /* Ajusta este valor según necesites */
+  padding: 20px;
+  background-color: #004080; /* Mismo color que el header */
+  border-radius: 10px; /* Bordes redondeados opcionales */
+  color: white; /* Para mejorar la visibilidad del texto */
+}
+
+mat-card-title {
+  color: white !important; /* Asegura que el color blanco se aplique */
+  text-align: center; /* Opcional: centrar el título */
+  font-weight: bold; /* Opcional: hacer el texto más llamativo */
+}
+
+mat-card {
+  margin-top: 40px; /* Espacio entre header y formulario */
+  background-color: #004080 !important; /* Color del header */
+  color: white;
+  padding: 20px;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}

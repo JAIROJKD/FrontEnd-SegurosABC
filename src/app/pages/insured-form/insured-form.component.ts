@@ -107,6 +107,7 @@ export class InsuredFormComponent implements OnInit {
     }
   }
 
+/*
   loadInsuredData(insured: any) {
     console.log('Datos recibidos para edición:', insured);
 
@@ -124,6 +125,7 @@ export class InsuredFormComponent implements OnInit {
       dateOfBirth: formattedDate
     });
   }
+*/
 
   // Método para limpiar el formulario y resetear la selección
   clearForm() {

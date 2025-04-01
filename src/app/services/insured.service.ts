@@ -38,7 +38,12 @@ export class InsuredService {
 
   // ✅ Método para pasar los datos del asegurado seleccionado al formulario
   setSelectedInsured(insured: any) {
-    this.selectedInsuredSubject.next(insured);
+    const formattedInsured = {
+      ...insured,
+      dateOfBirth: insured.dateOfBirth ? new Date(insured.dateOfBirth).toISOString().split('T')[0] : ''
+    };
+  
+    this.selectedInsuredSubject.next(formattedInsured);
   }
 }
 
