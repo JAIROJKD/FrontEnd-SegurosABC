@@ -10,54 +10,19 @@ mat-card {
   margin-right: auto; /* Centrar el mat-card */
 }
 
-/* Estilo para centrar el título dentro del mat-card */
-mat-card-title {
-  text-align: center; /* Centra el título */
-  font-size: 24px;
-  font-weight: bold;
-  color: #3f51b5; /* Color primario */
-  margin-bottom: 20px;
-}
-
-/* Contenedor para la tabla y su centrado */
-.mat-table-container {
-  display: flex;
-  justify-content: center; /* Centra la tabla dentro del contenedor */
-  width: 100%;
-}
-
 /* Estilo para la tabla */
 table.mat-table {
   width: 80%; /* Ajusta el ancho de la tabla */
   max-width: 100%;
   border-collapse: collapse;
-  background-color: #003366 !important; /* Azul oscuro similar al header */
+  background-color: #004080 !important; /* Azul del formulario */
   color: white !important; /* Texto en blanco */
   border-radius: 8px;
   overflow: hidden;
 }
 
-/* Estilo para encabezados de la tabla */
-th.mat-header-cell {
-  background-color: #0056b3 !important; /* Azul más claro */
-  color: white !important;
-  font-weight: bold;
-  text-align: center;
-  padding: 12px;
-}
 
-/* Estilos para las celdas de la tabla */
-td.mat-cell {
-  text-align: center;
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
-  color: white !important;
-}
 
-/* Estilo para filas alternas */
-tr.mat-row:nth-child(even) {
-  background-color: #002b55 !important; /* Azul más oscuro */
-}
 
 /* Botones */
 button {
@@ -91,4 +56,59 @@ button[color='warn'] {
 button[color='warn']:hover {
   background-color: #e53935;
   transform: scale(1.05);
+}
+
+mat-label {
+  color: black !important;
+  font-weight: bold;
+}
+
+mat-card-title {
+  text-align: center; /* Centra el texto */
+  display: block; /* Asegura que ocupe todo el ancho */
+  font-weight: bold;
+  font-size: 24px;
+  color: white; /* Para que combine con el fondo azul */
+}
+
+mat-card-content {
+  background-color: #004080 !important; /* Azul del formulario */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  color: white; /* Asegurar que el texto sea visible */
+}
+
+mat-card {
+  background-color: #004080 !important;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Cambia el fondo de los encabezados de la tabla */
+th.mat-header-cell {
+  background-color: #0056b3 !important; /* Azul más claro */
+  color: white !important;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px;
+}
+
+/* Cambia el fondo de las filas */
+tr.mat-row {
+  background-color: #004080 !important; /* Azul del formulario */
+}
+
+/* Alternar colores para mejorar visibilidad */
+tr.mat-row:nth-child(even) {
+  background-color: #003366 !important; /* Azul más oscuro */
+}
+
+/* Color de las celdas */
+td.mat-cell {
+  color: white !important;
+  text-align: center;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
 }
